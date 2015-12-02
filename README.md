@@ -1,0 +1,2 @@
+# EZdecimal
+easy decimal control
