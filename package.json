@@ -1,0 +1,17 @@
+{
+  "name": "ezdecimal",
+  "version": "0.1.0",
+  "description": "easy decimal control",
+  "main": "EZdecimal.js",
+  "scripts": {
+    "test": "mocha test.js",
+    "dev": "./node_modules/typescript/bin/tsc -w EZdecimal.ts",
+    "build": "./node_modules/typescript/bin/tsc EZdecimal.ts"
+  },
+  "author": "guchengf@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "typescript": "^1.7.3"
+  }
+}

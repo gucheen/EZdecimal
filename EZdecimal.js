@@ -1,0 +1,22 @@
+/*
+* EZdecimal
+* easy decimal control
+* version 0.1.0
+* author: guchengf@gmail.com
+*/
+var EZdecimal;
+EZdecimal = function (originalNumber, digits) {
+    if (typeof originalNumber !== 'number' || typeof digits !== 'number') {
+        return NaN;
+    }
+    var handledNumber;
+    var decimalArray = originalNumber.toString().split('.');
+    if (decimalArray.length === 2 && decimalArray[1].length > digits) {
+        var pow = Math.pow(10, digits);
+        handledNumber = +(Math.round(originalNumber * pow) / pow);
+    }
+    else {
+        handledNumber = originalNumber;
+    }
+    return handledNumber;
+};
