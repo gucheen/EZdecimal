@@ -5,8 +5,8 @@
   "main": "EZdecimal.js",
   "scripts": {
     "test": "mocha test.js",
-    "dev": "./node_modules/typescript/bin/tsc -w EZdecimal.ts",
-    "build": "./node_modules/typescript/bin/tsc EZdecimal.ts"
+    "dev": "tsc -w EZdecimal.ts",
+    "build": "tsc EZdecimal.ts"
   },
   "author": "guchengf@gmail.com",
   "license": "MIT",
