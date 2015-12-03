@@ -5,6 +5,8 @@
 * author: guchengf@gmail.com
 */
 
+declare var module: any;
+
 interface EZdecimalFunc {
   (originalNumber: number, digits: number): number;
 }
@@ -12,9 +14,15 @@ interface EZdecimalFunc {
 var EZdecimal: EZdecimalFunc;
 
 EZdecimal = function(originalNumber: number, digits: number) {
-  if (typeof originalNumber !== 'number' || typeof digits !== 'number') {
+  if (typeof originalNumber !== 'number') {
     return NaN;
   }
+  
+  if (typeof digits !== 'number' && typeof digits !== 'undefined') {
+    return NaN;
+  }
+  
+  digits = digits || 0;
 
   var handledNumber: number;
 
@@ -28,9 +36,7 @@ EZdecimal = function(originalNumber: number, digits: number) {
   }
 
   return handledNumber;
-}
+};
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
   module.exports = EZdecimal;
-else
-  window.EZdecimal = EZdecimal;

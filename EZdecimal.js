@@ -6,9 +6,13 @@
 */
 var EZdecimal;
 EZdecimal = function (originalNumber, digits) {
-    if (typeof originalNumber !== 'number' || typeof digits !== 'number') {
+    if (typeof originalNumber !== 'number') {
         return NaN;
     }
+    if (typeof digits !== 'number' && typeof digits !== 'undefined') {
+        return NaN;
+    }
+    digits = digits || 0;
     var handledNumber;
     var decimalArray = originalNumber.toString().split('.');
     if (decimalArray.length === 2 && decimalArray[1].length > digits) {
@@ -22,5 +26,3 @@ EZdecimal = function (originalNumber, digits) {
 };
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
     module.exports = EZdecimal;
-else
-    window.EZdecimal = EZdecimal;
