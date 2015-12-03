@@ -31,6 +31,6 @@ EZdecimal = function(originalNumber: number, digits: number) {
 }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
-	module.exports = Validator;
+	module.exports = EZdecimal;
 else
 	window.EZdecimal = EZdecimal;
