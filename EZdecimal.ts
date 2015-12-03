@@ -6,31 +6,31 @@
 */
 
 interface EZdecimalFunc {
-	(originalNumber: number, digits: number): number;
+  (originalNumber: number, digits: number): number;
 }
 
 var EZdecimal: EZdecimalFunc;
 
 EZdecimal = function(originalNumber: number, digits: number) {
-	if (typeof originalNumber !== 'number' || typeof digits !== 'number') {
-		return NaN;
-	}
+  if (typeof originalNumber !== 'number' || typeof digits !== 'number') {
+    return NaN;
+  }
 
-	var handledNumber: number;
+  var handledNumber: number;
 
-	var decimalArray: string[] = originalNumber.toString().split('.');
+  var decimalArray: string[] = originalNumber.toString().split('.');
 
-	if (decimalArray.length === 2 && decimalArray[1].length > digits) {
-		var pow: number = Math.pow(10, digits);
-		handledNumber = +(Math.round(originalNumber * pow) / pow);
-	} else {
-		handledNumber = originalNumber;
-	}
+  if (decimalArray.length === 2 && decimalArray[1].length > digits) {
+    var pow: number = Math.pow(10, digits);
+    handledNumber = +(Math.round(originalNumber * pow) / pow);
+  } else {
+    handledNumber = originalNumber;
+  }
 
-	return handledNumber;
+  return handledNumber;
 }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
-	module.exports = EZdecimal;
+  module.exports = EZdecimal;
 else
-	window.EZdecimal = EZdecimal;
+  window.EZdecimal = EZdecimal;
