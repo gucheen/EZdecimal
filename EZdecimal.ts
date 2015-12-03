@@ -29,3 +29,8 @@ EZdecimal = function(originalNumber: number, digits: number) {
 
 	return handledNumber;
 }
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
+	module.exports = Validator;
+else
+	window.EZdecimal = EZdecimal;

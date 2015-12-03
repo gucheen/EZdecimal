@@ -20,3 +20,7 @@ EZdecimal = function (originalNumber, digits) {
     }
     return handledNumber;
 };
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
+    module.exports = Validator;
+else
+    window.EZdecimal = EZdecimal;
